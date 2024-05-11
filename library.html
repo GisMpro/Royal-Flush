@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Library</h2>
+<!-- Danh sách loại chính -->
+<select id="card-type" onchange="showSubTypeOptions(this.value)">
+    <option value="all">All</option>
+    <option value="Cards">Cards</option>
+</select>
+
+<!-- Bảng chọn loại phụ, ẩn mặc định -->
+<div id="sub-type-container" style="display: none;">
+    <select id="sub-type" onchange="displaySubTypeCards(this.value)">
+        <option value="All">All</option>
+        <option value="Beast">Beast</option>
+        <option value="Demon">Demon</option>
+        <option value="Dragon">Dragon</option>
+        <option value="Elemental">Elemental</option>
+        <option value="Mech">Mech</option>
+        <option value="Murloc">Murloc</option>
+        <option value="Naga">Naga</option>
+        <option value="Pirate">Pirate</option>
+        <option value="Normal">Normal</option>
+        <option value="Spell">Spell</option>
+        <option value="Weapon">Weapon</option>
+    </select>
+</div>
+
+<!-- Modal để hiển thị hình ảnh phóng to -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content" alt="Enlarged Image">
+</div>
+
+<!-- Lưới chứa hình ảnh Spell -->
+<div id="spell-grid" class="spell-grid"></div>
+
+<!-- Lưới chứa hình ảnh Weapon -->
+<div id="weapon-grid" class="weapon-grid"></div>
+
+<!-- Lưới chứa hình ảnh All -->
+<div id="all-grid" class="all-grid"></div>
+
+<!-- Lưới chứa hình ảnh Beast -->
+<div id="beast-grid" class="beast-grid"></div>
+
+<!-- Lưới chứa hình ảnh Demon -->
+<div id="demon-grid" class="demon-grid"></div>
+
+<!-- Lưới chứa hình ảnh Dragon -->
+<div id="dragon-grid" class="dragon-grid"></div>
+
+<!-- Lưới chứa hình ảnh Elemental -->
+<div id="elemental-grid" class="elemental-grid"></div>
+
+<!-- Lưới chứa hình ảnh Mech -->
+<div id="mech-grid" class="mech-grid"></div>
+
+<!-- Lưới chứa hình ảnh Murloc -->
+<div id="murloc-grid" class="murloc-grid"></div>
+
+<!-- Lưới chứa hình ảnh Naga -->
+<div id="naga-grid" class="naga-grid"></div>
+
+<!-- Lưới chứa hình ảnh Pirate -->
+<div id="pirate-grid" class="pirate-grid"></div>
+
+<!-- Lưới chứa hình ảnh Normal -->
+<div id="normal-grid" class="normal-grid"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

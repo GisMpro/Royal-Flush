@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearthstone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="game-start">
+        <h1>Welcome to Hearthstone</h1>
+        <button onclick="chooseTurn()">Start Game</button>
+        <div id="turn-choice" style="display:none;">
+            <p>You are the First or Second?</p>
+            <button onclick="startGame(true)">Go First</button>
+            <button onclick="startGame(false)">Go Second</button>
+        </div>
+    </div>
+    <script src="start.js"></script>
+</body>
+
+</html>

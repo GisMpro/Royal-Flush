@@ -1,0 +1,541 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    overflow-x: hidden;
+    /* Prevents horizontal scroll */
+}
+
+#stats {
+    width: 90%;
+    /* More suitable for mobile */
+    max-width: 600px;
+    /* Maximum width to ensure it looks good on larger devices too */
+    margin: 20px auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.stat {
+    margin: 20px 10px;
+    /* Reduced side margins for mobile */
+}
+
+.stat h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    /* Tăng kích thước font */
+    font-weight: bold;
+    /* Làm cho chữ đậm */
+}
+
+button {
+    width: 50px;
+    /* Slightly larger for mobile */
+    height: 50px;
+    font-size: 18px;
+    /* Adjust font size for mobile */
+    margin: 5px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px #999;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+}
+
+button:active {
+    background-color: #e6e6e6;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#health {
+    background: linear-gradient(to right, #ff0000, #ffcccc);
+    /* Red gradient */
+}
+
+#armor {
+    background: linear-gradient(to right, #808080, #d9d9d9);
+    /* Gray gradient */
+}
+
+#mana {
+    background: linear-gradient(to right, #1e90ff, #b0c4de);
+    /* Blue gradient */
+}
+
+span {
+    width: 100px;
+    /* Wider span for better display */
+    display: inline-block;
+    padding: 10px
+}
+
+#game-start button {
+    background-color: #4CAF50;
+    /* Màu xanh lá */
+    color: white;
+    width: 200px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#game-start button:hover {
+    background-color: #45a049;
+    }
+
+#turn-choice p {
+    font-size: 25px;
+    color: #FFF;
+    margin: 20px 0;
+}
+
+#turn-control button {
+    background-color: #39d243;
+    /* Màu xanh lá */
+    color: white;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#turn-control button:hover {
+    background-color: #b7d16f;
+    /* Màu xanh đậm hơn khi hover */
+}
+
+#reset-game button {
+    background-color: #f44336;
+    /* Màu đỏ */
+    color: white;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#reset-game button:hover {
+    background-color: #c0392b;
+    /* Màu đỏ đậm hơn khi hover */
+}
+
+#increase-mana-cap button {
+    background-color: #5560fe;
+    /* Màu xanh lá */
+    color: white;
+    width: 200px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#increase-mana-cap button:hover {
+    background-color: #7c64ca;
+    /* Màu xanh đậm hơn khi hover */
+}
+
+#menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#cards-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#cards-container .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#cards-container .card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#sub-type-container {
+    margin-top: 10px;
+}
+
+/* Danh sách chính */
+#sub-type {
+    width: 100px;
+    padding: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Danh sách loại phụ */
+#sub-type-container {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Định dạng bảng trống với thanh cuộn */
+.blank-table {
+    width: 90%;
+    /* Điều chỉnh theo yêu cầu */
+    height: 500px;
+    /* Chiều cao cố định để kích hoạt thanh cuộn */
+    background-color: rgb(46, 46, 46);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: auto;
+    /* Kích hoạt thanh cuộn khi nội dung tràn quá chiều cao */
+}
+
+/* Lưới hình ảnh All với số lượng cột cố định */
+.spell-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Spell */
+.spell-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Weapon với số lượng cột cố định */
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Weapon */
+.weapon-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh All với số lượng cột cố định */
+.all-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh All */
+.all-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Beast với số lượng cột cố định */
+.beast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Beast */
+.beast-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Demon với số lượng cột cố định */
+.demon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Demon */
+.demon-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Dragon với số lượng cột cố định */
+.dragon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Dragon */
+.dragon-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Elemental với số lượng cột cố định */
+.elemental-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Elemental */
+.elemental-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Mech với số lượng cột cố định */
+.mech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Mech */
+.mech-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Murloc với số lượng cột cố định */
+.murloc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Murloc */
+.murloc-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Naga với số lượng cột cố định */
+.naga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Naga */
+.naga-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Pirate với số lượng cột cố định */
+.pirate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Pirate */
+.pirate-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Lưới hình ảnh Normal với số lượng cột cố định */
+.normal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Số cột cố định: 4 */
+    gap: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    justify-items: start;
+    align-items: start;
+}
+
+/* Tùy chỉnh kích thước hình ảnh Normal */
+.normal-image {
+    max-width: 200px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    max-height: 200px;
+    margin: 5px;
+}
+
+/* Modal container (ẩn theo mặc định) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Nền mờ tối */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hình ảnh bên trong modal */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Nút đóng modal */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: justify;
+    color: #666;
+}
+
+/* Thêm Media Queries để điều chỉnh khi cửa sổ nhỏ hơn */
+@media (max-width: 600px) {
+    .content {
+        max-width: 100%;
+        /* Chiếm toàn bộ chiều rộng cửa sổ */
+        margin: 10px;
+        padding: 15px;
+    }
+
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: auto;
+        padding: 20px 0;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Gameplay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="stats">
+        <div class="stat">
+            <h2>Health</h2>
+            <button onclick="modifyHealth(-1)">-</button>
+            <span id="health">30</span>
+            <button onclick="modifyHealth(1)">+</button>
+        </div>
+        <div class="stat">
+            <h2>Armor</h2>
+            <button onclick="modifyArmor(-1)">-</button>
+            <span id="armor">0</span>
+            <button onclick="modifyArmor(1)">+</button>
+        </div>
+        <div class="stat">
+            <h2>Mana</h2>
+            <button onclick="modifyMana(-1)">-</button>
+            <span id="mana">0</span>
+            <button onclick="modifyMana(1)">+</button>
+        </div>
+
+    </div>
+
+<div id="turn-control">
+    <button id="turn-button" onclick="toggleTurn()">Start your turn</button>
+</div>
+
+<div id="reset-game">
+    <button onclick="resetGame()">Start the game again</button>
+</div>
+
+<div id="increase-mana-cap">
+    <button onclick="increaseManaCap()">Up the maximum Mana to 15</button>
+</div>
+
+<div id="menu-icon" onclick="toggleMenu()">
+    ☰
+</div>
+
+<div id="menu" style="display: none;">
+    <button onclick="goToLibrary()">Library</button>
+    <!-- Thêm các mục khác nếu cần -->
+</div>
+
+<div id="cards-container" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
